@@ -1,11 +1,11 @@
 package com.example.locationproviderlist;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
 import android.widget.Button;
 import java.util.List;
 
@@ -20,6 +20,7 @@ public class LocProviderListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mTextView = findViewById(R.id.txtOutput);
+        locmgr = (LocationManager) getSystemService(LOCATION_SERVICE);
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,5 @@ public class LocProviderListActivity extends AppCompatActivity {
                 mTextView.setText(s);
             }
         });
-
     }
 }
